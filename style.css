@@ -19,6 +19,53 @@
   --box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.075);
 }
 
+.gnrt-rte-btn {
+  color: #ffffff;
+  background-color: #009879;
+  padding: 0.45rem;
+  border-radius: 0.3rem;
+  font-weight: bold;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.main-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  min-width: 400px;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+}
+
+.main-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.main-table th,
+.main-table td {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+}
+
+.main-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.main-table tbody tr:nth-of-type(even) {
+  background-color: #dddddd;
+}
+
+.main-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -59,7 +106,6 @@ svg {
 body {
   font: 16px/1.5 "Lato", sans-serif;
 }
-
 
 /* HEADER STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -184,7 +230,6 @@ body {
   fill: var(--blue);
 }
 
-
 /* PAGE CONTENT STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .page-content {
@@ -298,7 +343,6 @@ body {
   grid-column: 1 / -1;
 }
 
-
 /* MQ RULES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @media screen and (max-width: 767px) {
@@ -307,7 +351,7 @@ body {
     position: static;
     width: 100%;
   }
-   
+
   .page-header {
     padding: 10px;
   }
@@ -342,12 +386,12 @@ body {
   .page-header .admin-menu li:nth-last-child(2) {
     margin-bottom: 12px;
   }
-  
+
   .page-header .admin-menu li:last-child,
   .search-and-user .admin-profile .greeting {
     display: none;
   }
-  
+
   .page-content {
     min-height: 0;
     padding: 10px;
@@ -389,7 +433,6 @@ body {
   }
 }
 
-
 /* BODY CLASSES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .mob-menu-opened .toggle-mob-menu svg {
@@ -430,7 +473,6 @@ body {
     width: calc(100% - 40px);
   }
 }
-
 
 /* FOOTER
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
