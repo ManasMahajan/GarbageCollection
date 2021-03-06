@@ -4,7 +4,7 @@ const collapseBtn = document.querySelector(".admin-menu .collapse-btn");
 const toggleMobileMenu = document.querySelector(".toggle-mob-menu");
 const collapsedClass = "collapsed";
 
-collapseBtn.addEventListener("click", function() {
+collapseBtn.addEventListener("click", function () {
   this.getAttribute("aria-expanded") == "true"
     ? this.setAttribute("aria-expanded", "false")
     : this.setAttribute("aria-expanded", "true");
@@ -14,7 +14,7 @@ collapseBtn.addEventListener("click", function() {
   body.classList.toggle(collapsedClass);
 });
 
-toggleMobileMenu.addEventListener("click", function() {
+/*toggleMobileMenu.addEventListener("click", function() {
   this.getAttribute("aria-expanded") == "true"
     ? this.setAttribute("aria-expanded", "false")
     : this.setAttribute("aria-expanded", "true");
@@ -23,11 +23,12 @@ toggleMobileMenu.addEventListener("click", function() {
     : this.setAttribute("aria-label", "open menu");
   body.classList.toggle("mob-menu-opened");
 });
+*/
 
 for (const link of menuLinks) {
-  link.addEventListener("mouseenter", function() {
+  link.addEventListener("mouseenter", function () {
     body.classList.contains(collapsedClass) &&
-    window.matchMedia("(min-width: 768px)").matches
+      window.matchMedia("(min-width: 768px)").matches
       ? this.setAttribute("title", this.textContent)
       : this.removeAttribute("title");
   });

@@ -2,15 +2,14 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Garbage</title>
-  <link rel="stylesheet" href="./style.css">
-
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
   <!-- partial:index.partial.html -->
-  <svg style="display:none;">
+  <svg style="display: none">
     <symbol id="down" viewBox="0 0 16 16">
       <polygon points="3.81 4.38 8 8.57 12.19 4.38 13.71 5.91 8 11.62 2.29 5.91 3.81 4.38" />
     </symbol>
@@ -135,18 +134,49 @@
             <th>Location</th>
           </tr>
         </thead>
-        <tbody id="table-body">
-        </tbody>
+        <tbody id="table-body"></tbody>
       </table>
     </div>
     <!-- </section> -->
     <footer class="page-footer">
-      <small>Made with <span>❤</span> by Manas, Aashay, Shantanu and Yash
+      <small>Made with <span>❤</span> by Manas, Aashay, Shantanu and
+        Yash
       </small>
     </footer>
   </section>
   <!-- partial -->
   <script src="./script.js"></script>
+  <script>
+    const tableBody = document.getElementById("table-body");
+
+    let count = 1;
+    function loadTable() {
+      fetch("http://localhost:4546/ts_data")
+        .then((res) => res.json())
+        .then((data) => {
+          tableBody.innerHTML = "";
+          for (const datum of data) {
+            binId = datum.binId;
+            binName = datum.binName;
+            timestamp = datum.timestamp;
+            fillLevel = datum.fillLevel;
+
+            tableBody.innerHTML += `
+                <tr>
+                    <td>${count}</td>
+                    <td>${binName}</td>
+                    <td>${fillLevel}</td>
+                    <td>${"full"}</td>
+                    <td>${timestamp}</td>
+                </tr>
+                `;
+            count++;
+          }
+        });
+    }
+
+    loadTable();
+  </script>
 </body>
 
 </html>
